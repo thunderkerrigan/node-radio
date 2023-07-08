@@ -1,0 +1,32 @@
+version: "3.8"
+services:
+  radio-londres:
+    # The official v2 Traefik docker image
+    image: node-radio:latest
+    restart: always
+    # Enables the web UI and tells Traefik to listen to docker
+    ports:
+      # The HTTP port
+      - "3030:3000"
+    volumes:
+      - ./radioLondres:/app/playlists
+  radio-paris:
+    # The official v2 Traefik docker image
+    image: node-radio:latest
+    restart: always
+    # Enables the web UI and tells Traefik to listen to docker
+    ports:
+      # The HTTP port
+      - "3031:3000"
+    volumes:
+      - ./radioParis:/app/playlists
+  radio-german:
+    # The official v2 Traefik docker image
+    image: node-radio:latest
+    restart: always
+    # Enables the web UI and tells Traefik to listen to docker
+    ports:
+      # The HTTP port
+      - "3032:3000"
+    volumes:
+      - ./radioGerman:/app/playlists
